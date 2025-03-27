@@ -38,13 +38,9 @@ Follow the steps below to set up and run this project locally.
   ```bash
    pip install -r requirements.txt
 
-3. Install the required dependencies:
-  ```bash
-   pip install -r requirements.txt
-
 4. Run the Flask application:
   ```bash
-  python app.py
+   python app.p
 
 
 5. Open your browser and navigate to http://127.0.0.1:5000/ to interact with the application.

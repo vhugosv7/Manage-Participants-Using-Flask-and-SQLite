@@ -39,7 +39,7 @@ Follow the steps below to set up and run this project locally.
    pip install -r requirements.txt
 
 4. Run the Flask application:
-   ```bash
+  ```bash
   python app.py
 
 

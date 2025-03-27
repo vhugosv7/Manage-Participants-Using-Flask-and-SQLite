@@ -48,33 +48,25 @@ Follow the steps below to set up and run this project locally.
 
 ### Screnshoots
 
-**Main Page**
-![image](https://github.com/user-attachments/assets/5b31bc8f-020e-45ea-aa4c-9d7fbdb73373)
+
+![Main Page](https://github.com/user-attachments/assets/5b31bc8f-020e-45ea-aa4c-9d7fbdb73373)
 
 
-**Add new participant**
-![image](https://github.com/user-attachments/assets/3b757650-6b4b-4d2f-9272-05a545f859c8)
+![Add new participant](https://github.com/user-attachments/assets/3b757650-6b4b-4d2f-9272-05a545f859c8)
 
 
-**All participants table**
-![image](https://github.com/user-attachments/assets/1c2698a9-838b-44e6-ab69-fe2a79176cbf)
+![All participants table](https://github.com/user-attachments/assets/1c2698a9-838b-44e6-ab69-fe2a79176cbf)
 
 
-**Update participant information**
-**(Infomartion is displayed in input fields)*
-![image](https://github.com/user-attachments/assets/b2376de1-2b16-4cc6-b8ab-550bc1949dcc)
+![Update participant information. (Infomartion is displayed in input field)](https://github.com/user-attachments/assets/b2376de1-2b16-4cc6-b8ab-550bc1949dcc)
 
 
-**Action executed succesfully screen**
-![image](https://github.com/user-attachments/assets/a11a3135-d918-4ce7-91ee-abe16f115140)
+![Action executed succesfully screen](https://github.com/user-attachments/assets/a11a3135-d918-4ce7-91ee-abe16f115140)
 
 
-**Action no executed screen**
-![image](https://github.com/user-attachments/assets/6469779e-e655-4db3-865c-809953e1e8bb)
+![Action no executed screen](https://github.com/user-attachments/assets/6469779e-e655-4db3-865c-809953e1e8bb)
 
 
-**Error 404 (Page not found)**
-![image](https://github.com/user-attachments/assets/98411e93-9dd7-4596-b75f-84b2381fd1ac)
-
+![Error 404 (Page not found)](https://github.com/user-attachments/assets/98411e93-9dd7-4596-b75f-84b2381fd1ac)
 
 

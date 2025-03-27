@@ -34,12 +34,12 @@ Follow the steps below to set up and run this project locally.
    ```bash
    cd Web-App-Using-Flask-and-SQLite
 
-4. Install the required dependencies:
+3. Install the required dependencies:
   ```bash
-pip install -r requirements.txt
+   pip install -r requirements.txt
 
 4. Run the Flask application:
-```bash
+   ```bash
   python app.py
 
 

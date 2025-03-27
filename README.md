@@ -31,9 +31,10 @@ Follow the steps below to set up and run this project locally.
    git clone https://github.com/vhugosv7/Web-App-Using-Flask-and-SQLite.git
 
 2. Navigate to the project folder:
+   ```bash
    cd Web-App-Using-Flask-and-SQLite
 
-3. Install the required dependencies:
+4. Install the required dependencies:
   ```bash
   pip install -r requirements.txt
 

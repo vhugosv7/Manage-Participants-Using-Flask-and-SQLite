@@ -23,6 +23,7 @@ Follow the steps below to set up and run this project locally.
 - Flask 2.2.5
 - SQLite (Database is handled automatically)
 - Install the required dependencies using `pip`
+- Bootstrap 5.02
 
 ### Steps
 

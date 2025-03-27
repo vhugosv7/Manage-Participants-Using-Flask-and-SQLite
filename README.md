@@ -69,4 +69,4 @@ Follow the steps below to set up and run this project locally.
 
 ![Error 404 (Page not found)](https://github.com/user-attachments/assets/98411e93-9dd7-4596-b75f-84b2381fd1ac)
 
-
+![Screenshot of a comment on a GitHub issue showing an image, added in the Markdown, of an Octocat smiling and raising a tentacle.](https://myoctocat.com/assets/images/base-octocat.svg)

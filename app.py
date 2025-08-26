@@ -2,11 +2,10 @@ from flask import Flask, render_template, request, render_template_string
 import sqlite3
 
 # Change the template folder path, according to your path.
-app = Flask(__name__, template_folder='/Manage-Participants-Using-Flask-and-SQLite')
+app = Flask(__name__, template_folder='Manage-Participants-Using-Flask-and-SQLite')
 
 
 @app.route('/')  # Main Route - index
-@app.route('/')
 def index():
     return render_template('index.html')
 

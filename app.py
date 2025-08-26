@@ -1,8 +1,8 @@
-from flask import Flask, render_template, request, render_template_string
+from flask import Flask, render_template, request
 import sqlite3
 
 # Change the template folder path, according to your path.
-app = Flask(__name__, template_folder='Manage-Participants-Using-Flask-and-SQLite')
+app = Flask(__name__)
 
 
 @app.route('/')  # Main Route - index
@@ -156,102 +156,16 @@ def update():
 def action():
     # Simulating an action being successfully executed
     success_message = "Action executed successfully!"
-
-    # HTML template as a string
-    template = '''
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="data:image/x-icon;base64,AAABAAEAEBAAAAEACABoBQAAFgAAACgAAAAQAAAAIAAAAAEACAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAAAAAAA////AACTsAACqswA/9GoANn//wDJmf8A2bj/AOj//wD/nEUA/7Z1AOvZ/wDUhkIAAND6APD//wD/wowAA9X/AP+pXgD/q2EAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEQwIBQUFBQUFBAQSEhIMDAARCAgICAgIBQUEDw8SCQwADw4OCAgICAgFBAQPEhIJAAAODggICAgIBQQEDw8KCQAADg4ODggICAUEBAQPCQwAAA4ODg4OCAgIBQQEDwkAAAAODg4ODgsLCAUEBA8JAAAAAgICDgsGBgsFBA8PCQAAEBANAw4OAAAHBAQPDwkAAAALAA4OAQEABQQEDwoJAAAAAQAODg4AAAUEBA8JAAAAAAAODg4ODggFBA8PCQAAAAAACAgOCAUFBA8PDwkAAAAAAAAFBQUPDw8PCgkAAAAAAAAAAAQPDw8JCgkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAgAAAAMAAAADAAAAAwAEAAMABAADAAQAAgAEAAMABAADAAwAA4AMAAOADAADwBwAA+A8AAP//AAA=" rel="icon" type="image/x-icon">
-        <title>Action Result</title>
-        <!-- Bootstrap CSS -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    </head>
-    <body>
-        <div class="container mt-4">
-            <!-- Success Message -->
-            <div class="alert alert-success alert-dismissible fade show col text-center"
-            role="alert">
-                <strong>{{ success_message }}</strong>
-                <button type="button" class="btn-close" data-bs-dismiss="alert"
-                aria-label="Close"></button>
-            </div>
-            <div class="conatiner mt-5">
-                <h3 class="d-flex justify-content-center">Action Completed!
-                </h3>
-                <p class="d-flex justify-content-center">
-                Your action was completed successfully.</p>
-                <img  class="rounded mx-auto d-block"
-                src="https://www.svgrepo.com/show/530196/crocodile.svg"
-                alt="Success" width="200" height="300">
-                <div class="col text-center">
-                    <a href="/" class="btn btn-success ">Go Back Home</a>
-                </div>
-            </div>
-        </div>
-    <!-- Bootstrap JS and dependencies -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
-     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    </body>
-    </html>
-    '''
-
     # Rendering the template string with the success message
-    return render_template_string(template, success_message=success_message)
+    return render_template('success.html', success_message=success_message)
 
 
 @app.route('/error')
 def no_action():
     # Simulating an action being successfully executed
     message = "The action was not executed !"
-
-    # HTML template as a string
-    template = '''
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="data:image/x-icon;base64,AAABAAEAEBAAAAEACABoBQAAFgAAACgAAAAQAAAAIAAAAAEACAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAAAAAAA////AACTsAACqswA/9GoANn//wDJmf8A2bj/AOj//wD/nEUA/7Z1AOvZ/wDUhkIAAND6APD//wD/wowAA9X/AP+pXgD/q2EAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEQwIBQUFBQUFBAQSEhIMDAARCAgICAgIBQUEDw8SCQwADw4OCAgICAgFBAQPEhIJAAAODggICAgIBQQEDw8KCQAADg4ODggICAUEBAQPCQwAAA4ODg4OCAgIBQQEDwkAAAAODg4ODgsLCAUEBA8JAAAAAgICDgsGBgsFBA8PCQAAEBANAw4OAAAHBAQPDwkAAAALAA4OAQEABQQEDwoJAAAAAQAODg4AAAUEBA8JAAAAAAAODg4ODggFBA8PCQAAAAAACAgOCAUFBA8PDwkAAAAAAAAFBQUPDw8PCgkAAAAAAAAAAAQPDw8JCgkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAgAAAAMAAAADAAAAAwAEAAMABAADAAQAAgAEAAMABAADAAwAA4AMAAOADAADwBwAA+A8AAP//AAA=" rel="icon" type="image/x-icon">
-        <title>Action Result</title>
-        <!-- Bootstrap CSS -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    </head>
-    <body>
-        <div class="container mt-4">
-            <!-- Success Message -->
-            <div class="alert alert-danger alert-dismissible
-            fade show col text-center" role="alert">
-                <strong>{{message }}</strong>
-                <button type="button" class="btn-close" data-bs-dismiss="alert"
-                aria-label="Close"></button>
-            </div>
-            <div class="conatiner mt-5">
-            <h3 class="d-flex justify-content-center">Action No Completed!</h3>
-                <p class="d-flex justify-content-center">An error occurred,
-                and your action couldn't be completed. Please try again.</p>
-                <!--<img  class="rounded mx-auto d-block" src="https://www.svgrepo.com/show/492592/confused.svg" alt="Success" width="200" height="300">-->
-                <img  class="rounded mx-auto d-block" src="https://www.svgrepo.com/show/530193/polar-bear.svg" alt="Success" width="200" height="300">
-                <div class="col text-center">
-                    <a href="/" class="btn btn-outline-danger">Go Back</a>
-                </div>
-
-            </div>
-        </div>
-        <!-- Bootstrap JS and dependencies -->
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    </body>
-    </html>
-    '''
     # Rendering the template string with the success message
-    return render_template_string(template, message=message)
+    return render_template('no_success.html', message=message)
 
 
 @app.errorhandler(404)  # inbuilt function which takes error as parameter
@@ -260,4 +174,4 @@ def not_found(e):
 
 
 if __name__ == '__main__':
-    app.run(debug=False)
+    app.run(host='0.0.0.0', debug=True)
